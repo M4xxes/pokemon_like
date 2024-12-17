@@ -1,0 +1,85 @@
+﻿<UserControl x:Class="PokemonLike.Views.AccountManagementControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             Width="342" Height="Auto">
+    <!-- Grille principale -->
+    <Grid>
+        <!-- Background Gradient -->
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#FF1E3C72" Offset="0" />
+                <GradientStop Color="#FF2A5298" Offset="1" />
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <!-- Contenu principal -->
+        <StackPanel Margin="20">
+            <!-- Titre -->
+            <TextBlock Text="User Information" 
+                       FontWeight="Bold" 
+                       FontSize="18" 
+                       Margin="0,0,0,10" 
+                       Foreground="White"
+                       HorizontalAlignment="Center" />
+
+            <!-- Informations utilisateur -->
+            <TextBlock x:Name="UsernameTextBlock" 
+                       Text="Username: [Placeholder]" 
+                       Margin="0,5" 
+                       Foreground="White" />
+            <TextBlock x:Name="UserEmailTextBlock" 
+                       Text="Email: [Placeholder]" 
+                       Margin="0,5" 
+                       Foreground="White" />
+
+            <!-- Boutons d'action -->
+            <Border Margin="0,15,0,5" HorizontalAlignment="Center" Width="150" Height="40" Background="#FF3498DB" CornerRadius="20">
+                <Button Content="Log Out" 
+                        Click="LogOut_Click" 
+                        HorizontalAlignment="Stretch"
+                        Background="Transparent"
+                        Foreground="White"
+                        BorderBrush="Transparent"
+                        FontWeight="Bold"
+                        FontSize="14">
+                    <!-- Effet de survol -->
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#FF2980B9"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#FF1C5A6E"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </Border>
+
+            <Border Margin="0,5,0,15" HorizontalAlignment="Center" Width="150" Height="40" Background="#FF2ECC71" CornerRadius="20">
+                <Button Content="Delete Account" 
+                        Click="DeleteAccount_Click" 
+                        HorizontalAlignment="Stretch"
+                        Background="Transparent"
+                        Foreground="White"
+                        BorderBrush="Transparent"
+                        FontWeight="Bold"
+                        FontSize="14">
+                    <!-- Effet de survol -->
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Setter Property="Background" Value="#FF28B463"/>
+                            <Setter Property="Cursor" Value="Hand"/>
+                            <Style.Triggers>
+                                <Trigger Property="IsMouseOver" Value="True">
+                                    <Setter Property="Background" Value="#FF1A8D2F"/>
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                </Button>
+            </Border>
+        </StackPanel>
+    </Grid>
+</UserControl>
